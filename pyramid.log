@@ -1,0 +1,27 @@
+Starting server in PID 5204.
+Traceback (most recent call last):
+  File "/app/web/virtualenv/pyramidenv/bin/pserve", line 9, in <module>
+    load_entry_point('pyramid==1.3.2', 'console_scripts', 'pserve')()
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/scripts/pserve.py", line 47, in main
+    return command.run()
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/scripts/pserve.py", line 311, in run
+    serve()
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/scripts/pserve.py", line 301, in serve
+    server(app)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/paste/deploy/loadwsgi.py", line 189, in server_wrapper
+    **context.local_conf)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/paste/deploy/util.py", line 56, in fix_call
+    val = callable(*args, **kw)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/waitress-0.8.1-py2.6.egg/waitress/__init__.py", line 21, in serve_paste
+    serve(app, **kw)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/waitress-0.8.1-py2.6.egg/waitress/__init__.py", line 11, in serve
+    server = _server(app, **kw)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/waitress-0.8.1-py2.6.egg/waitress/server.py", line 57, in __init__
+    self.bind((self.adj.host, self.adj.port))
+  File "/usr/lib64/python2.6/asyncore.py", line 333, in bind
+    return self.socket.bind(addr)
+  File "<string>", line 1, in bind
+socket.error: [Errno 98] Address already in use
+Removing PID file pyramid.pid
+Starting server in PID 5425.
+serving on http://0.0.0.0:6541

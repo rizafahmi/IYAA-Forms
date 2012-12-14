@@ -1,0 +1,38 @@
+ul#items{		
+		width:auto;
+		height:83px;
+		overflow:hidden;
+		}
+	ul#items li{
+		list-style:none;
+		float:left;
+		height:83px;
+		overflow:hidden;
+		margin:0 4px;
+		background:#DBDAE0;
+		color:#fff;
+		text-align:center;
+		color:#555;
+		}
+	ul#items li:hover{color:#333;}
+	ul#items .info{color:#999;text-shadow:#f1f1f1 0 1px 0;}	
+	ol#pagination{position:relative;text-align:center;}
+	ol#pagination li{
+		display:inline-block;
+		width:20px;
+		height:20px;
+		text-align:left;
+		text-indent:-8000px;
+		list-style:none;
+		cursor:pointer;
+		margin:0 2px;
+		}
+	ol#pagination li:hover{background:url(../img/bg_buttons.png) no-repeat 0 -16px;}
+	ol#pagination li.current{color:#f00;font-weight:bold;background:url(../img/bg_buttons.png) no-repeat 0 -32px;}
+	ol#pagination li.prev, ol#pagination li.next{
+		position:absolute;
+		bottom:40px;
+		}
+	ol#pagination li.prev{left:-45px;background:url(../img/btn_icon_left.png) no-repeat;}
+	ol#pagination li.next{right:-10px;background:url(../img/btn_icon_right.png) no-repeat;}
+	

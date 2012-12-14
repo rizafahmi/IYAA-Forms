@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Music Bank</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="http://www.iyaa.com/css/total_main.css"
+    title="" type="css" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+      .formulir p {margin: 0; padding: 0;}
+      .formulir .inp{width:295px; border:none;-webkit-border-radius:
+        5px;-moz-border-radius: 5px;border-radius: 5px; padding:6px 15px;
+        margin-bottom:10px;font-family:Verdana, Geneva, sans-serif;}
+      .formulir .sum{width:295px; float:left; border:1px solid #7f7174;
+        padding:7px 15px 12px 15px;-webkit-border-radius:
+        5px;-moz-border-radius: 5px;border-radius: 5px; font-family:Verdana,
+        Geneva, sans-serif; color:#cccccc; margin-bottom:10px;}
+      .formulir ul{width:270px; float:left; padding:10px 0 0 25px; list-style:
+      none; font-size: 13px;}
+      .formulir ul li p{padding-bottom:10px}
+      .formulir ul li p span{font-family:Arial, Helvetica, sans-serif;}
+      .formulir ul li{float:left; padding:0 5px;}
+      .formulir ul li select{padding:5px 10px;}
+
+      .formulir2{position:absolute;top:430px;left:556px; width:328px;}
+      .formulir2 .inp{width:295px; border:none;-webkit-border-radius:
+        5px;-moz-border-radius: 5px;border-radius: 5px; padding:6px 15px;
+        margin-bottom:10px;font-family:Verdana, Geneva, sans-serif;}
+
+      .formulir3{position:absolute;top:310px;left:536px; width:360px;
+        font-size:15px; color:#ccc; font-weight:bold; font-family:Verdana,
+        Geneva, sans-serif;}
+      .formulir3 span{padding-left:10px;}
+      .formulir3 ul{float:left; padding:15px 0 10px 20px;}
+      .formulir3 li{float:left; width:130px; padding:10px 20px 10px;
+        color:#d9b8d4;}
+
+      .formulir4{position:absolute;top:310px;left:536px; width:360px;
+        font-size:13px; color:#d9b8d4; font-weight:bold; font-family:Verdana,
+        Geneva, sans-serif;}
+      .formulir4 ul{padding:20px 0 0 20px;}
+      .formulir4 li{float:left; padding-bottom:7px;}
+      .formulir4 p{float:left; width:120px;}
+      .formulir4 .bar{width:198px; height:14px; float:left; background:#cccccc;
+        border:1px solid #666666;}
+      .formulir4 .bar span{color:#fff; font-weight:normal;font-size:11px;
+        text-align:right; padding-right:5px;}
+    </style>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon"
+    href="${request.static_url('iyaayoutube:static/ico/favicon.ico')}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-144-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-114-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-72-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-57-precomposed.png')}">
+  </head>
+
+  <body style="background: none;">
+<div class="formulir">
+    <form name="formulir" id="formulir" action="" method="POST" accept-charset="utf-8">
+        <input class="inp" name="inputNama" type="text" placeholder="Nama :"/>
+        <input class="inp" name="inputEmail" type="text" placeholder="Email :"/>
+        <input class="inp" name="inputPhone" type="text" placeholder="Telephone :"/>
+        <div class="sum">
+            <p>Jumlah tiket yang diinginkan :</p>
+            <ul>
+                <li>
+                    <p>Tiket <span>I</span></p>
+                    <select name="inputTiket1">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </li>
+                <li>
+                    <p>Tiket <span>II</span></p>
+                    <select name="inputTiket2">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </li>
+                <li>
+                    <p>Tiket <span>III</span></p>
+                    <select name="inputTiket3">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </li>
+                <li>
+                    <p>Tiket <span>IV</span></p>
+                    <select name="inputTiket4">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <center>
+          <a href="#" onclick="document.forms['formulir'].submit();
+            return false;"><img
+            src="http://www.iyaa.com/images/musicbank/button.png"></a>
+          </center>
+    </form>
+</div>
+
+  </body>
+</html>

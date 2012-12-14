@@ -1,0 +1,767 @@
+*** Starting uWSGI 1.2.4 (64bit) on [Fri Dec 14 12:40:10 2012] ***
+compiled with version: 4.4.6 20120305 (Red Hat 4.4.6-4) on 10 August 2012 22:48:44
+detected number of CPU cores: 8
+current working directory: /app/web/virtualenv/pyramidenv/IyaaYoutube
+writing pidfile to ./pid_5001.pid
+detected binary path: /app/web/virtualenv/pyramidenv/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+probably another instance of uWSGI is running on the same address.
+bind(): Address already in use [socket.c line 745]
+*** Starting uWSGI 1.2.4 (64bit) on [Fri Dec 14 14:06:45 2012] ***
+compiled with version: 4.4.6 20120305 (Red Hat 4.4.6-4) on 10 August 2012 22:48:44
+detected number of CPU cores: 8
+current working directory: /app/web/virtualenv/pyramidenv/IyaaYoutube
+writing pidfile to ./pid_5001.pid
+detected binary path: /app/web/virtualenv/pyramidenv/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+uWSGI http bound on :6540 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:36409 (port auto-assigned) fd 3
+Python version: 2.6.6 (r266:84292, Jun 18 2012, 14:18:47)  [GCC 4.4.6 20110731 (Red Hat 4.4.6-3)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x8c8e40
+your server socket listen backlog is limited to 256 connections
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x8c8e40 pid: 17161 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 17161)
+spawned uWSGI worker 1 (pid: 17170, cores: 1)
+set cpu affinity for worker 1 to 0 1 2
+spawned uWSGI worker 2 (pid: 17171, cores: 1)
+set cpu affinity for worker 2 to 3 4 5
+spawned uWSGI http 1 (pid: 17172)
+[pid: 17170|app: 0|req: 1/1] 192.168.103.5 () {36 vars in 632 bytes} [Fri Dec 14 14:06:51 2012] GET / => generated 5243 bytes in 29 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 17170 is done. Seeya!
+[pid: 17171|app: 0|req: 1/2] 192.168.103.5 () {40 vars in 731 bytes} [Fri Dec 14 14:06:51 2012] GET /static/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 17171 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 17174)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 17175)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 17175|app: 0|req: 2/4] 192.168.103.5 () {40 vars in 706 bytes} [Fri Dec 14 14:06:52 2012] GET /static/js/jquery.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+[pid: 17174|app: 0|req: 2/4] 192.168.103.5 () {40 vars in 753 bytes} [Fri Dec 14 14:06:52 2012] GET /static/css/bootstrap-responsive.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 17175 is done. Seeya!
+...The work of process 17174 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 17176)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 1 to 0 1 2
+[pid: 17176|app: 0|req: 3/5] 192.168.103.5 () {40 vars in 734 bytes} [Fri Dec 14 14:06:53 2012] GET /static/js/bootstrap-transition.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 17176 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 17178)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 17179)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 17178|app: 0|req: 3/6] 192.168.103.5 () {40 vars in 726 bytes} [Fri Dec 14 14:06:55 2012] GET /static/js/bootstrap-button.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 17178 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 17180)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 17179|app: 0|req: 4/7] 192.168.103.5 () {44 vars in 791 bytes} [Fri Dec 14 14:07:03 2012] POST /save => generated 3026 bytes in 32 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 17179 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 17189)
+set cpu affinity for worker 1 to 0 1 2
+Traceback (most recent call last):
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/router.py", line 187, in __call__
+    response = self.handle_request(request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/tweens.py", line 20, in excview_tween
+    response = handler(request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/router.py", line 164, in handle_request
+    response = view_callable(context, request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/config/views.py", line 333, in rendered_view
+    result = view(context, request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/config/views.py", line 471, in _requestonly_view
+    response = view(request)
+  File "./iyaayoutube/views.py", line 84, in view_video
+    json = simplejson.load(urllib.urlopen(url))
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/__init__.py", line 395, in load
+    use_decimal=use_decimal, **kw)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/__init__.py", line 451, in loads
+    return _default_decoder.decode(s)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/decoder.py", line 406, in decode
+    obj, end = self.raw_decode(s)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/decoder.py", line 426, in raw_decode
+    raise JSONDecodeError("No JSON object could be decoded", s, idx)
+simplejson.decoder.JSONDecodeError: No JSON object could be decoded: line 1 column 0 (char 0)
+[pid: 17180|app: 0|req: 4/8] 118.137.72.246 () {38 vars in 823 bytes} [Fri Dec 14 14:20:02 2012] GET /view_video/671kD74Gf3U => generated 0 bytes in 770 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+...The work of process 17180 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 18130)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 17189|app: 0|req: 5/9] 118.137.72.246 () {38 vars in 683 bytes} [Fri Dec 14 14:20:03 2012] GET /favicon.ico => generated 164 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 17189 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 18131)
+set cpu affinity for worker 1 to 0 1 2
+Traceback (most recent call last):
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/router.py", line 187, in __call__
+    response = self.handle_request(request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/tweens.py", line 20, in excview_tween
+    response = handler(request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/router.py", line 164, in handle_request
+    response = view_callable(context, request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/config/views.py", line 333, in rendered_view
+    result = view(context, request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/config/views.py", line 471, in _requestonly_view
+    response = view(request)
+  File "./iyaayoutube/views.py", line 84, in view_video
+    json = simplejson.load(urllib.urlopen(url))
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/__init__.py", line 395, in load
+    use_decimal=use_decimal, **kw)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/__init__.py", line 451, in loads
+    return _default_decoder.decode(s)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/decoder.py", line 406, in decode
+    obj, end = self.raw_decode(s)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/decoder.py", line 426, in raw_decode
+    raise JSONDecodeError("No JSON object could be decoded", s, idx)
+simplejson.decoder.JSONDecodeError: No JSON object could be decoded: line 1 column 0 (char 0)
+[pid: 18131|app: 0|req: 6/10] 118.137.72.246 () {38 vars in 823 bytes} [Fri Dec 14 14:20:05 2012] GET /view_video/671kD74Gf3U => generated 0 bytes in 6784 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+...The work of process 18131 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 18154)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 18154|app: 0|req: 7/11] 100.43.83.143 () {28 vars in 393 bytes} [Fri Dec 14 14:55:27 2012] GET /robots.txt => generated 63 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 18154 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 20607)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 20607|app: 0|req: 8/12] 100.43.83.143 () {34 vars in 476 bytes} [Fri Dec 14 15:00:26 2012] GET / => generated 5243 bytes in 63 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 20607 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 21010)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 21010|app: 0|req: 9/13] 202.77.101.34 () {36 vars in 970 bytes} [Fri Dec 14 15:17:57 2012] GET / => generated 5243 bytes in 30 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 21010 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22279)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22279|app: 0|req: 10/15] 202.77.101.34 () {40 vars in 1069 bytes} [Fri Dec 14 15:17:59 2012] GET /static/css/bootstrap.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+[pid: 18130|app: 0|req: 5/15] 202.77.101.34 () {40 vars in 1091 bytes} [Fri Dec 14 15:17:59 2012] GET /static/css/bootstrap-responsive.css => generated 0 bytes in 9 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22279 is done. Seeya!
+...The work of process 18130 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22280)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 22281)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22280|app: 0|req: 6/16] 202.77.101.34 () {40 vars in 1044 bytes} [Fri Dec 14 15:18:00 2012] GET /static/js/jquery.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22280 is done. Seeya!
+[pid: 22281|app: 0|req: 11/17] 202.77.101.34 () {40 vars in 1064 bytes} [Fri Dec 14 15:18:00 2012] GET /static/js/bootstrap-button.js => generated 0 bytes in 6 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22281 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22283)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+[pid: 22283|app: 0|req: 7/18] 202.77.101.34 () {40 vars in 1072 bytes} [Fri Dec 14 15:18:01 2012] GET /static/js/bootstrap-transition.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22283 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22290)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 22291)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 22290|app: 0|req: 12/19] 202.77.101.34 () {36 vars in 970 bytes} [Fri Dec 14 15:18:59 2012] GET / => generated 5243 bytes in 30 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 22290 is done. Seeya!
+[pid: 22291|app: 0|req: 8/20] 202.77.101.34 () {40 vars in 1069 bytes} [Fri Dec 14 15:19:00 2012] GET /static/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22291 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22809)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 22810)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 22809|app: 0|req: 13/21] 202.77.101.34 () {40 vars in 1091 bytes} [Fri Dec 14 15:19:00 2012] GET /static/css/bootstrap-responsive.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22809 is done. Seeya!
+[pid: 22810|app: 0|req: 9/22] 202.77.101.34 () {40 vars in 1044 bytes} [Fri Dec 14 15:19:00 2012] GET /static/js/jquery.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22810 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22816)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22816|app: 0|req: 14/23] 202.77.101.34 () {40 vars in 1072 bytes} [Fri Dec 14 15:19:01 2012] GET /static/js/bootstrap-transition.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22816 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22817)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 22818)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22817|app: 0|req: 10/24] 202.77.101.34 () {40 vars in 1064 bytes} [Fri Dec 14 15:19:03 2012] GET /static/js/bootstrap-button.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22817 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22819)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 22818|app: 0|req: 15/25] 202.77.101.34 () {36 vars in 1394 bytes} [Fri Dec 14 15:19:33 2012] GET / => generated 5243 bytes in 30 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 22818 is done. Seeya!
+[pid: 22819|app: 0|req: 11/26] 202.77.101.34 () {38 vars in 1438 bytes} [Fri Dec 14 15:19:33 2012] GET /static/css/bootstrap.css => generated 99809 bytes in 35 msecs via sendfile() (HTTP/1.1 200) 5 headers in 196 bytes (0 switches on core 0)
+...The work of process 22819 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22850)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 22851)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 22850|app: 0|req: 16/27] 202.77.101.34 () {38 vars in 1460 bytes} [Fri Dec 14 15:19:34 2012] GET /static/css/bootstrap-responsive.css => generated 14447 bytes in 11 msecs via sendfile() (HTTP/1.1 200) 5 headers in 196 bytes (0 switches on core 0)
+...The work of process 22850 is done. Seeya!
+[pid: 22851|app: 0|req: 12/28] 202.77.101.34 () {38 vars in 1433 bytes} [Fri Dec 14 15:19:34 2012] GET /static/js/bootstrap-button.js => generated 2713 bytes in 15 msecs via sendfile() (HTTP/1.1 200) 5 headers in 202 bytes (0 switches on core 0)
+...The work of process 22851 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22852)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22852|app: 0|req: 17/29] 202.77.101.34 () {38 vars in 1441 bytes} [Fri Dec 14 15:19:35 2012] GET /static/js/bootstrap-transition.js => generated 1801 bytes in 9 msecs via sendfile() (HTTP/1.1 200) 5 headers in 202 bytes (0 switches on core 0)
+...The work of process 22852 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22854)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 22855)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22855|app: 0|req: 18/30] 202.77.101.34 () {36 vars in 1438 bytes} [Fri Dec 14 15:19:37 2012] GET /static/ico/favicon.ico => generated 1150 bytes in 20 msecs via sendfile() (HTTP/1.1 200) 5 headers in 211 bytes (0 switches on core 0)
+...The work of process 22855 is done. Seeya!
+[pid: 22854|app: 0|req: 13/31] 202.77.101.34 () {38 vars in 1413 bytes} [Fri Dec 14 15:19:37 2012] GET /static/js/jquery.js => generated 247823 bytes in 55 msecs via sendfile() (HTTP/1.1 200) 5 headers in 204 bytes (0 switches on core 0)
+...The work of process 22854 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22856)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 22858)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22858|app: 0|req: 19/32] 202.77.101.34 () {38 vars in 1073 bytes} [Fri Dec 14 15:20:30 2012] GET / => generated 5243 bytes in 29 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 22858 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22907)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22856|app: 0|req: 14/34] 202.77.101.34 () {40 vars in 1091 bytes} [Fri Dec 14 15:20:32 2012] GET /static/css/bootstrap-responsive.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22856 is done. Seeya!
+[pid: 22907|app: 0|req: 20/34] 202.77.101.34 () {40 vars in 1069 bytes} [Fri Dec 14 15:20:32 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22907 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22921)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 22922)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 22921|app: 0|req: 15/35] 202.77.101.34 () {40 vars in 1044 bytes} [Fri Dec 14 15:20:33 2012] GET /static/js/jquery.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22921 is done. Seeya!
+[pid: 22922|app: 0|req: 21/36] 202.77.101.34 () {40 vars in 1072 bytes} [Fri Dec 14 15:20:33 2012] GET /static/js/bootstrap-transition.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22922 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 22924)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+[pid: 22924|app: 0|req: 16/37] 202.77.101.34 () {40 vars in 1064 bytes} [Fri Dec 14 15:20:34 2012] GET /static/js/bootstrap-button.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22924 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 22935)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 22936)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 22935|app: 0|req: 22/38] 202.77.101.34 () {38 vars in 1073 bytes} [Fri Dec 14 15:22:35 2012] GET / => generated 5243 bytes in 30 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 22935 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 23051)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 23051|app: 0|req: 23/39] 202.77.101.34 () {42 vars in 1100 bytes} [Fri Dec 14 15:22:37 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 23051 is done. Seeya!
+[pid: 22936|app: 0|req: 17/40] 202.77.101.34 () {42 vars in 1122 bytes} [Fri Dec 14 15:22:37 2012] GET /static/css/bootstrap-responsive.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 22936 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 23053)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 23054)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 23053|app: 0|req: 18/42] 202.77.101.34 () {40 vars in 1044 bytes} [Fri Dec 14 15:22:38 2012] GET /static/js/jquery.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+[pid: 23054|app: 0|req: 24/42] 202.77.101.34 () {40 vars in 1072 bytes} [Fri Dec 14 15:22:38 2012] GET /static/js/bootstrap-transition.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 23053 is done. Seeya!
+...The work of process 23054 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 23064)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+[pid: 23064|app: 0|req: 19/43] 202.77.101.34 () {40 vars in 1064 bytes} [Fri Dec 14 15:22:39 2012] GET /static/js/bootstrap-button.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 23064 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 23066)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 23067)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 23066|app: 0|req: 25/44] 202.77.101.34 () {36 vars in 716 bytes} [Fri Dec 14 15:40:41 2012] GET / => generated 5159 bytes in 29 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 23066 is done. Seeya!
+[pid: 23067|app: 0|req: 20/45] 202.77.101.34 () {38 vars in 756 bytes} [Fri Dec 14 15:40:41 2012] GET /static/css/bootstrap.css => generated 99809 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 5 headers in 196 bytes (0 switches on core 0)
+...The work of process 23067 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 24370)
+set cpu affinity for worker 1 to 0 1 2Respawned uWSGI worker 2 (new pid: 24371)
+
+set cpu affinity for worker 2 to 3 4 5
+[pid: 24370|app: 0|req: 26/46] 202.77.101.34 () {38 vars in 778 bytes} [Fri Dec 14 15:40:42 2012] GET /static/css/bootstrap-responsive.css => generated 14447 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 5 headers in 196 bytes (0 switches on core 0)
+...The work of process 24370 is done. Seeya!
+[pid: 24371|app: 0|req: 21/47] 202.77.101.34 () {38 vars in 731 bytes} [Fri Dec 14 15:40:42 2012] GET /static/js/jquery.js => generated 247823 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 5 headers in 204 bytes (0 switches on core 0)
+...The work of process 24371 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 24374)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24374|app: 0|req: 27/48] 202.77.101.34 () {38 vars in 759 bytes} [Fri Dec 14 15:40:43 2012] GET /static/js/bootstrap-transition.js => generated 1801 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 5 headers in 202 bytes (0 switches on core 0)
+...The work of process 24374 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 24375)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 24376)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24375|app: 0|req: 22/50] 202.77.101.34 () {38 vars in 751 bytes} [Fri Dec 14 15:40:45 2012] GET /static/js/bootstrap-button.js => generated 2713 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 5 headers in 202 bytes (0 switches on core 0)
+[pid: 24376|app: 0|req: 28/50] 202.77.101.34 () {36 vars in 760 bytes} [Fri Dec 14 15:40:45 2012] GET /static/ico/favicon.ico => generated 1150 bytes in 3 msecs via sendfile() (HTTP/1.1 200) 5 headers in 211 bytes (0 switches on core 0)
+...The work of process 24375 is done. Seeya!
+...The work of process 24376 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 24379)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 24380)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24379|app: 0|req: 23/51] 192.168.103.5 () {38 vars in 1001 bytes} [Fri Dec 14 15:46:22 2012] GET / => generated 5243 bytes in 98 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 24379 is done. Seeya!
+[pid: 24380|app: 0|req: 29/52] 192.168.103.5 () {38 vars in 1001 bytes} [Fri Dec 14 15:46:22 2012] GET / => generated 5243 bytes in 37 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 24380 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 24858)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 24859)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24858|app: 0|req: 24/53] 192.168.103.5 () {42 vars in 1122 bytes} [Fri Dec 14 15:46:29 2012] GET /static/css/bootstrap-responsive.css => generated 0 bytes in 70 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24858 is done. Seeya!
+[pid: 24859|app: 0|req: 30/54] 192.168.103.5 () {42 vars in 1100 bytes} [Fri Dec 14 15:46:29 2012] GET /static/css/bootstrap.css => generated 0 bytes in 71 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24859 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 24862)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 24863)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24862|app: 0|req: 25/55] 192.168.103.5 () {40 vars in 1044 bytes} [Fri Dec 14 15:46:30 2012] GET /static/js/jquery.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24862 is done. Seeya!
+[pid: 24863|app: 0|req: 31/56] 192.168.103.5 () {40 vars in 1064 bytes} [Fri Dec 14 15:46:30 2012] GET /static/js/bootstrap-button.js => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24863 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 24864)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+[pid: 24864|app: 0|req: 26/57] 192.168.103.5 () {40 vars in 1072 bytes} [Fri Dec 14 15:46:31 2012] GET /static/js/bootstrap-transition.js => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24864 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 24865)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 24866)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 24865|app: 0|req: 32/58] 192.168.103.5 () {38 vars in 1009 bytes} [Fri Dec 14 15:46:33 2012] GET /static/ico/favicon.ico => generated 0 bytes in 15 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24865 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 24867)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24867|app: 0|req: 33/59] 192.168.103.5 () {38 vars in 1001 bytes} [Fri Dec 14 15:47:05 2012] GET / => generated 1275 bytes in 23 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 24867 is done. Seeya!
+[pid: 24866|app: 0|req: 27/60] 192.168.103.5 () {42 vars in 1100 bytes} [Fri Dec 14 15:47:05 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24866 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 24960)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 24961)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24961|app: 0|req: 34/61] 192.168.103.5 () {38 vars in 1009 bytes} [Fri Dec 14 15:47:05 2012] GET /static/ico/favicon.ico => generated 0 bytes in 8 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 24961 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 24962)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 24962|app: 0|req: 35/62] 66.249.74.94 () {32 vars in 480 bytes} [Fri Dec 14 15:48:09 2012] GET /view_video/vX8ZplzWsmA => generated 4913 bytes in 879 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 24962 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 25052)
+set cpu affinity for worker 1 to 0 1 2
+Traceback (most recent call last):
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/router.py", line 187, in __call__
+    response = self.handle_request(request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/tweens.py", line 20, in excview_tween
+    response = handler(request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/router.py", line 164, in handle_request
+    response = view_callable(context, request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/config/views.py", line 333, in rendered_view
+    result = view(context, request)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/pyramid/config/views.py", line 471, in _requestonly_view
+    response = view(request)
+  File "./iyaayoutube/views.py", line 84, in view_video
+    json = simplejson.load(urllib.urlopen(url))
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/__init__.py", line 395, in load
+    use_decimal=use_decimal, **kw)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/__init__.py", line 451, in loads
+    return _default_decoder.decode(s)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/decoder.py", line 406, in decode
+    obj, end = self.raw_decode(s)
+  File "/app/web/virtualenv/pyramidenv/lib/python2.6/site-packages/simplejson/decoder.py", line 426, in raw_decode
+    raise JSONDecodeError("No JSON object could be decoded", s, idx)
+simplejson.decoder.JSONDecodeError: No JSON object could be decoded: line 1 column 0 (char 0)
+[pid: 24960|app: 0|req: 28/63] 66.249.74.94 () {32 vars in 480 bytes} [Fri Dec 14 15:49:11 2012] GET /view_video/671kD74Gf3U => generated 0 bytes in 707 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+...The work of process 24960 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 25136)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 25052|app: 0|req: 36/64] 192.168.103.5 () {38 vars in 966 bytes} [Fri Dec 14 16:04:31 2012] GET / => generated 5298 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 25052 is done. Seeya!
+[pid: 25136|app: 0|req: 29/65] 192.168.103.5 () {42 vars in 1065 bytes} [Fri Dec 14 16:04:31 2012] GET /static/css/bootstrap.css => generated 0 bytes in 13 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 25136 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 26480)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 26481)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 26480|app: 0|req: 37/66] 192.168.103.5 () {40 vars in 1037 bytes} [Fri Dec 14 16:04:32 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 26480 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 26482)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 26482|app: 0|req: 38/67] 192.168.103.5 () {38 vars in 974 bytes} [Fri Dec 14 16:04:32 2012] GET /static/ico/favicon.ico => generated 0 bytes in 13 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 26482 is done. Seeya!
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+Respawned uWSGI worker 1 (new pid: 26488)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 26488|app: 0|req: 39/68] 192.168.103.5 () {38 vars in 1072 bytes} [Fri Dec 14 16:42:14 2012] GET / => generated 5298 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 26488 is done. Seeya!
+[pid: 26481|app: 0|req: 30/69] 192.168.103.5 () {40 vars in 1068 bytes} [Fri Dec 14 16:42:14 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 26481 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 29432)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 29433)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 29433|app: 0|req: 40/70] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 16:42:15 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 29433 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 29436)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 29436|app: 0|req: 41/71] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 16:49:19 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 29436 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30028)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30028|app: 0|req: 42/72] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 16:49:25 2012] GET / => generated 5298 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30028 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30039)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30039|app: 0|req: 43/73] 192.168.103.5 () {42 vars in 1099 bytes} [Fri Dec 14 16:49:26 2012] GET /static/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30039 is done. Seeya!
+[pid: 29432|app: 0|req: 31/74] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 16:49:26 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 29432 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30040)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30041)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30041|app: 0|req: 44/75] 192.168.103.5 () {38 vars in 1072 bytes} [Fri Dec 14 16:52:39 2012] GET / => generated 5298 bytes in 21 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30041 is done. Seeya!
+[pid: 30040|app: 0|req: 32/76] 192.168.103.5 () {42 vars in 1099 bytes} [Fri Dec 14 16:52:40 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30040 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30237)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30238)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30237|app: 0|req: 33/77] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 16:52:40 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30237 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30241)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 30238|app: 0|req: 45/78] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 16:56:33 2012] GET / => generated 5324 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30238 is done. Seeya!
+[pid: 30241|app: 0|req: 34/79] 192.168.103.5 () {42 vars in 1099 bytes} [Fri Dec 14 16:56:34 2012] GET /static/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30241 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30444)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 30445)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 30444|app: 0|req: 46/80] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 16:56:34 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30444 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30446)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30446|app: 0|req: 47/81] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 16:56:43 2012] GET / => generated 5324 bytes in 21 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30446 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30460)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30445|app: 0|req: 35/82] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 16:56:44 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30445 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30461)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 30460|app: 0|req: 48/83] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 16:58:28 2012] GET / => generated 5324 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30460 is done. Seeya!
+[pid: 30461|app: 0|req: 36/84] 192.168.103.5 () {42 vars in 1099 bytes} [Fri Dec 14 16:58:28 2012] GET /static/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30461 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30554)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 30555)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 30554|app: 0|req: 49/85] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 16:58:28 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30554 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30556)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30556|app: 0|req: 50/86] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:00:14 2012] GET / => generated 5324 bytes in 28 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30556 is done. Seeya!
+[pid: 30555|app: 0|req: 37/87] 192.168.103.5 () {42 vars in 1099 bytes} [Fri Dec 14 17:00:14 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30555 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30685)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30686)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30685|app: 0|req: 38/88] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:00:14 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30685 is done. Seeya!
+[pid: 30686|app: 0|req: 51/89] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:00:14 2012] GET /static/ico/favicon.ico => generated 0 bytes in 6 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30686 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30689)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30690)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30690|app: 0|req: 52/90] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 17:02:27 2012] GET / => generated 5324 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30690 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30848)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30848|app: 0|req: 53/91] 192.168.103.5 () {42 vars in 1099 bytes} [Fri Dec 14 17:02:28 2012] GET /static/css/bootstrap.css => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30848 is done. Seeya!
+[pid: 30689|app: 0|req: 39/92] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 17:02:28 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30689 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30849)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30850)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30849|app: 0|req: 40/93] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:03:28 2012] GET / => generated 5254 bytes in 23 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30849 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30936)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 30850|app: 0|req: 54/94] 192.168.103.5 () {42 vars in 1099 bytes} [Fri Dec 14 17:03:28 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30850 is done. Seeya!
+[pid: 30936|app: 0|req: 41/95] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:03:29 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30936 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30937)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 30938)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 30937|app: 0|req: 55/96] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:03:29 2012] GET /static/ico/favicon.ico => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30937 is done. Seeya!
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+Respawned uWSGI worker 1 (new pid: 30940)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30940|app: 0|req: 56/97] 202.77.101.34 () {38 vars in 712 bytes} [Fri Dec 14 17:04:07 2012] GET / => generated 5230 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30940 is done. Seeya!
+[pid: 30938|app: 0|req: 42/98] 202.77.101.34 () {42 vars in 807 bytes} [Fri Dec 14 17:04:07 2012] GET /static/css/bootstrap.css => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30938 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30970)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30971)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30970|app: 0|req: 43/99] 202.77.101.34 () {38 vars in 786 bytes} [Fri Dec 14 17:04:07 2012] GET /%5B%5B--ImgRootDir--%5D%5Dimages/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30970 is done. Seeya!
+[pid: 30971|app: 0|req: 57/100] 202.77.101.34 () {38 vars in 780 bytes} [Fri Dec 14 17:04:07 2012] GET /static/ico/favicon.ico => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30971 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30973)
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30976)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30976|app: 0|req: 58/101] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:04:38 2012] GET / => generated 5145 bytes in 21 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30976 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 30995)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30995|app: 0|req: 59/102] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:04:38 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30995 is done. Seeya!
+[pid: 30973|app: 0|req: 44/103] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:04:38 2012] GET /static/ico/favicon.ico => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 30973 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 30998)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 30999)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 30999|app: 0|req: 60/104] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:04:51 2012] GET / => generated 5216 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 30999 is done. Seeya!
+[pid: 30998|app: 0|req: 45/105] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:04:51 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 30998 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31006)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 31007)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31007|app: 0|req: 61/106] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:04:51 2012] GET /static/ico/favicon.ico => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31007 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31008)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31008|app: 0|req: 62/107] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:05:01 2012] GET / => generated 5146 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31008 is done. Seeya!
+[pid: 31006|app: 0|req: 46/108] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:05:02 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31006 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31024)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 31025)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31024|app: 0|req: 47/109] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:05:02 2012] GET /static/ico/favicon.ico => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31024 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31026)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 31025|app: 0|req: 63/110] 202.77.101.34 () {38 vars in 712 bytes} [Fri Dec 14 17:05:07 2012] GET / => generated 5126 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31025 is done. Seeya!
+[pid: 31026|app: 0|req: 48/111] 202.77.101.34 () {38 vars in 786 bytes} [Fri Dec 14 17:05:08 2012] GET /%5B%5B--ImgRootDir--%5D%5Dimages/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31026 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31028)
+set cpu affinity for worker 1 to 0 1 2Respawned uWSGI worker 2 (new pid: 31029)
+
+set cpu affinity for worker 2 to 3 4 5
+[pid: 31028|app: 0|req: 64/112] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 17:05:36 2012] GET / => generated 5146 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31028 is done. Seeya!
+[pid: 31029|app: 0|req: 49/113] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 17:05:37 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31029 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31036)
+set cpu affinity for worker 1 to 0 1 2
+Respawned uWSGI worker 2 (new pid: 31037)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 31036|app: 0|req: 65/114] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 17:07:47 2012] GET / => generated 5146 bytes in 21 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31036 is done. Seeya!
+[pid: 31037|app: 0|req: 50/115] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 17:07:48 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31037 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31182)
+set cpu affinity for worker 1 to 0 1 2Respawned uWSGI worker 2 (new pid: 31183)
+set cpu affinity for worker 2 to 3 4 5
+
+[pid: 31183|app: 0|req: 51/116] 202.77.101.34 () {38 vars in 712 bytes} [Fri Dec 14 17:08:45 2012] GET / => generated 5126 bytes in 27 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31183 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31309)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 31309|app: 0|req: 52/117] 202.77.101.34 () {38 vars in 786 bytes} [Fri Dec 14 17:08:46 2012] GET /%5B%5B--ImgRootDir--%5D%5Dimages/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31309 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31310)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 31182|app: 0|req: 66/118] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:10:02 2012] GET / => generated 5187 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31182 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31354)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31354|app: 0|req: 67/119] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:10:06 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31354 is done. Seeya!
+[pid: 31310|app: 0|req: 53/120] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:10:06 2012] GET /static/ico/favicon.ico => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31310 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31356)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 31357)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31357|app: 0|req: 68/121] 192.168.103.5 () {38 vars in 1161 bytes} [Fri Dec 14 17:10:24 2012] GET / => generated 5187 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31357 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31363)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31363|app: 0|req: 69/122] 192.168.103.5 () {38 vars in 1040 bytes} [Fri Dec 14 17:10:25 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31363 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31364)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31364|app: 0|req: 70/123] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:11:40 2012] GET / => generated 5230 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31364 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31479)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31479|app: 0|req: 71/124] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:11:41 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31479 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31480)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31480|app: 0|req: 72/125] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:11:42 2012] GET /static/ico/favicon.ico => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31480 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31481)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31481|app: 0|req: 73/126] 192.168.103.5 () {38 vars in 1000 bytes} [Fri Dec 14 17:11:46 2012] GET / => generated 5230 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31481 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31486)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31486|app: 0|req: 74/127] 192.168.103.5 () {40 vars in 1071 bytes} [Fri Dec 14 17:11:46 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31486 is done. Seeya!
+[pid: 31356|app: 0|req: 54/128] 202.77.101.34 () {38 vars in 712 bytes} [Fri Dec 14 17:11:47 2012] GET / => generated 5210 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31356 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31487)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 31488)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31487|app: 0|req: 55/129] 202.77.101.34 () {38 vars in 786 bytes} [Fri Dec 14 17:11:47 2012] GET /%5B%5B--ImgRootDir--%5D%5Dimages/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31487 is done. Seeya!
+[pid: 31488|app: 0|req: 75/130] 192.168.103.5 () {38 vars in 1008 bytes} [Fri Dec 14 17:11:47 2012] GET /static/ico/favicon.ico => generated 0 bytes in 3 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31488 is done. Seeya!
+worker respawning too fast !!! i have to sleep a bit (2 seconds)...
+Respawned uWSGI worker 2 (new pid: 31489)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 31490)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31490|app: 0|req: 76/131] 192.168.103.5 () {38 vars in 966 bytes} [Fri Dec 14 17:12:00 2012] GET / => generated 5230 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31490 is done. Seeya!
+[pid: 31489|app: 0|req: 56/132] 192.168.103.5 () {40 vars in 1037 bytes} [Fri Dec 14 17:12:01 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31489 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31533)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 31534)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31534|app: 0|req: 77/133] 192.168.103.5 () {38 vars in 974 bytes} [Fri Dec 14 17:12:02 2012] GET /static/ico/favicon.ico => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31534 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31535)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31535|app: 0|req: 78/134] 192.168.103.5 () {38 vars in 966 bytes} [Fri Dec 14 17:12:09 2012] GET / => generated 5229 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31535 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31538)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31538|app: 0|req: 79/135] 192.168.103.5 () {40 vars in 1037 bytes} [Fri Dec 14 17:12:10 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31538 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31541)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31541|app: 0|req: 80/136] 192.168.103.5 () {38 vars in 974 bytes} [Fri Dec 14 17:12:12 2012] GET /static/ico/favicon.ico => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31541 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31542)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31542|app: 0|req: 81/137] 192.168.103.5 () {38 vars in 1127 bytes} [Fri Dec 14 17:12:37 2012] GET / => generated 5229 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31542 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31548)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31548|app: 0|req: 82/138] 192.168.103.5 () {38 vars in 1006 bytes} [Fri Dec 14 17:12:38 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31548 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31550)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31550|app: 0|req: 83/139] 202.77.101.34 () {38 vars in 712 bytes} [Fri Dec 14 17:13:51 2012] GET / => generated 5209 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31550 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31623)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31623|app: 0|req: 84/140] 202.77.101.34 () {38 vars in 786 bytes} [Fri Dec 14 17:13:51 2012] GET /%5B%5B--ImgRootDir--%5D%5Dimages/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31623 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31624)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31624|app: 0|req: 85/141] 192.168.103.5 () {38 vars in 966 bytes} [Fri Dec 14 17:14:11 2012] GET / => generated 5229 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31624 is done. Seeya!
+[pid: 31533|app: 0|req: 57/142] 192.168.103.5 () {40 vars in 1037 bytes} [Fri Dec 14 17:14:12 2012] GET /[[--ImgRootDir--]]images/musicbank/button.png => generated 198 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+...The work of process 31533 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 31644)
+set cpu affinity for worker 2 to 3 4 5
+Respawned uWSGI worker 1 (new pid: 31645)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31645|app: 0|req: 86/143] 192.168.103.5 () {38 vars in 974 bytes} [Fri Dec 14 17:14:13 2012] GET /static/ico/favicon.ico => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31645 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31646)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31646|app: 0|req: 87/144] 192.168.103.5 () {38 vars in 966 bytes} [Fri Dec 14 17:15:40 2012] GET / => generated 5231 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31646 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31742)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31742|app: 0|req: 88/145] 192.168.103.5 () {38 vars in 974 bytes} [Fri Dec 14 17:15:41 2012] GET /static/ico/favicon.ico => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 31742 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31745)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31745|app: 0|req: 89/146] 192.168.103.5 () {38 vars in 1127 bytes} [Fri Dec 14 17:16:13 2012] GET / => generated 5231 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31745 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31898)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31898|app: 0|req: 90/147] 202.77.101.34 () {38 vars in 963 bytes} [Fri Dec 14 17:16:20 2012] GET / => generated 5231 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31898 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 31901)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31901|app: 0|req: 91/148] 192.168.103.5 () {38 vars in 966 bytes} [Fri Dec 14 17:18:20 2012] GET / => generated 5330 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31901 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 32044)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 32044|app: 0|req: 92/149] 192.168.103.5 () {38 vars in 974 bytes} [Fri Dec 14 17:18:22 2012] GET /static/ico/favicon.ico => generated 0 bytes in 4 msecs (HTTP/1.1 304) 3 headers in 144 bytes (0 switches on core 0)
+...The work of process 32044 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 32045)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 32045|app: 0|req: 93/150] 192.168.103.5 () {38 vars in 1127 bytes} [Fri Dec 14 17:18:41 2012] GET / => generated 5330 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 32045 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 32052)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 32052|app: 0|req: 94/151] 202.77.101.34 () {38 vars in 1463 bytes} [Fri Dec 14 17:19:22 2012] GET / => generated 5330 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 32052 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 32086)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 32086|app: 0|req: 95/152] 202.77.101.34 () {38 vars in 1463 bytes} [Fri Dec 14 17:19:51 2012] GET / => generated 5383 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 32086 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 32110)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 32110|app: 0|req: 96/153] 202.77.101.34 () {38 vars in 1463 bytes} [Fri Dec 14 17:19:55 2012] GET / => generated 5383 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 32110 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 32111)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 32111|app: 0|req: 97/154] 192.168.103.5 () {38 vars in 1005 bytes} [Fri Dec 14 17:27:13 2012] GET / => generated 5383 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 32111 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 32486)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 32486|app: 0|req: 98/155] 192.168.103.5 () {38 vars in 1039 bytes} [Fri Dec 14 17:37:44 2012] GET / => generated 5704 bytes in 20 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 32486 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 697)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 31644|app: 0|req: 58/156] 192.168.103.5 () {38 vars in 1039 bytes} [Fri Dec 14 17:42:41 2012] GET / => generated 5704 bytes in 43 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 31644 is done. Seeya!
+Respawned uWSGI worker 2 (new pid: 1223)
+set cpu affinity for worker 2 to 3 4 5
+[pid: 697|app: 0|req: 99/157] 192.168.103.5 () {38 vars in 1039 bytes} [Fri Dec 14 17:42:47 2012] GET / => generated 5704 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 697 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 1226)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 1226|app: 0|req: 100/158] 192.168.103.5 () {46 vars in 1151 bytes} [Fri Dec 14 17:43:01 2012] POST / => generated 5704 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 1226 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 1230)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 1230|app: 0|req: 101/159] 202.77.101.34 () {46 vars in 1149 bytes} [Fri Dec 14 17:44:29 2012] POST / => generated 5704 bytes in 27 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 1230 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 1463)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 1463|app: 0|req: 102/160] 202.77.101.34 () {38 vars in 1000 bytes} [Fri Dec 14 17:44:39 2012] GET / => generated 5704 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 1463 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 1472)
+set cpu affinity for worker 1 to 0 1 2
+[pid: 1472|app: 0|req: 103/161] 202.77.101.34 () {46 vars in 1151 bytes} [Fri Dec 14 17:44:42 2012] POST / => generated 5704 bytes in 18 msecs (HTTP/1.1 200) 2 headers in 81 bytes (1 switches on core 0)
+...The work of process 1472 is done. Seeya!
+Respawned uWSGI worker 1 (new pid: 1484)
+set cpu affinity for worker 1 to 0 1 2
+SIGINT/SIGQUIT received...killing workers...
+gateway 1 (uWSGI http 1, pid: 17172) annihilated
+goodbye to uWSGI.

@@ -1,0 +1,1 @@
+uwsgi --http :6540 --wsgi-file app.wsgi --processes 2 --master --harakiri 120 --harakiri-verbose --limit-post 65536 --max-requests 4500 --close-on-exec --cpu-affinity 3 --http-timeout 280 --post-buffering 8192 --daemonize ./uwsgi_youtube.log --pidfile ./pid_5001.pid --listen 256 --reload-on-as 128 --reload-on-rss 96 --no-orphans
