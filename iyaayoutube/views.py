@@ -19,11 +19,11 @@ def save_view(request):
             'tiket3': request.POST['inputTiket3'],
             'tiket4': request.POST['inputTiket4'],
         }
-        print request.POST
+
         if request.POST['inputNama']:
             request.db['musicbank_early'].save(new_data)
             return HTTPFound(location='http://www.iyaa.com/hiburan/musik/musicbank/early2.html')
-    return {'message': 'Silakan isi nama kamu.<br /><a href="http://www.iyaa.com:6540/">Halaman sebelumnya.</a>'}
+    return {}
 
 
 @view_config(route_name='coverdance', renderer='coverdance.html')
