@@ -7,27 +7,28 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="stylesheet" href="http://www.iyaa.com/css/total_main.css"
-    title="" type="css" />
+    <link rel="stylesheet" type="text/css" media="all"
+    href="${request.static_url('iyaayoutube:static/css/deny.css')}" title=""
+    type="stylesheet" />
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <style>
-      .formulir p {margin: 0; padding: 0;}
-      .formulir .inp{width:295px; border:none;-webkit-border-radius:
+      .formulir p {margin: 0; padding: 0px 0px 0px 10px; text-align: left;}
+      .formulir .inp{width:312px; border:none;-webkit-border-radius:
         5px;-moz-border-radius: 5px;border-radius: 5px; padding:6px 15px;
         margin-bottom:10px;font-family:Verdana, Geneva, sans-serif;}
-      .formulir .sum{width:295px; float:left; border:1px solid #7f7174;
-        padding:7px 15px 12px 15px;-webkit-border-radius:
+      .formulir .sum{width:339px; padding: 7px 0px 12px 0px; float:left; border:1px solid #a19bb5;
+        -webkit-border-radius:
         5px;-moz-border-radius: 5px;border-radius: 5px; font-family:Verdana,
         Geneva, sans-serif; color:#cccccc; margin-bottom:10px;}
-      .formulir ul{width:270px; float:left; padding:10px 0 0 25px; list-style:
+      .formulir ul{width:315px; float:left; padding:5px 0 0px 10px; list-style:
       none; font-size: 13px;}
-      .formulir ul li p{padding-bottom:10px}
+      .formulir ul li p{padding:0px 0px 10px 0px;}
       .formulir ul li p span{font-family:Arial, Helvetica, sans-serif;}
       .formulir ul li{float:left; padding:0 5px;}
-      .formulir ul li select{padding:5px 10px;}
+      .formulir ul li select{padding:5px 5px;}
 
       .formulir2{position:absolute;top:430px;left:556px; width:328px;}
       .formulir2 .inp{width:295px; border:none;-webkit-border-radius:
@@ -65,66 +66,146 @@
     href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-72-precomposed.png')}">
     <link rel="apple-touch-icon-precomposed"
     href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-57-precomposed.png')}">
+    
+  <script type="text/javascript" src="http://www.iyaa.com/js/jquery-1.6.4.js"></script>
   </head>
 
   <body style="background: none;">
 <div class="formulir">
-    <form name="formulir" id="formulir" action="" method="POST" accept-charset="utf-8">
-        <input class="inp" name="inputNama" type="text" placeholder="Nama :"/>
-        <input class="inp" name="inputEmail" type="text" placeholder="Email :"/>
-        <input class="inp" name="inputPhone" type="text" placeholder="Telephone :"/>
+    <form id="formulir" name="formulir" action="" method="POST" accept-charset="utf-8">
+        <input class="inp" id="inputNama" name="inputNama" type="text" placeholder="Nama :"/>
+        <input class="inp" id="inputEmail" name="inputEmail" type="text" placeholder="Email :"/>
+        <input class="inp" id="inputPhone" name="inputPhone" type="text" placeholder="Telephone :"/>
         <div class="sum">
             <p>Jumlah tiket yang diinginkan :</p>
             <ul>
                 <li>
-                    <p>Tiket <span>I</span></p>
-                    <select name="inputTiket1">
+                    <p>Diamond</p>
+                    <select id="inputTiket1" name="inputTiket1">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                     </select>
                 </li>
                 <li>
-                    <p>Tiket <span>II</span></p>
-                    <select name="inputTiket2">
+                    <p>Gold</p>
+                    <select name="inputTiket2" id="inputTiket2">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                     </select>
                 </li>
                 <li>
-                    <p>Tiket <span>III</span></p>
-                    <select name="inputTiket3">
+                    <p>Silver</p>
+                    <select name="inputTiket3" id="inputTiket3">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                     </select>
                 </li>
                 <li>
-                    <p>Tiket <span>IV</span></p>
-                    <select name="inputTiket4">
+                    <p>Bronze</p>
+                    <select name="inputTiket4" id="inputTiket4">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </li>
+                <li>
+                    <p>Festival</p>
+                    <select name="inputTiket5" id="inputTiket5">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                     </select>
                 </li>
             </ul>
         </div>
         <center>
-          <a href="#" onclick="document.forms['formulir'].submit();
-            window.top.location.href='http://www.iyaa.com/hiburan/musik/musicbank/early2.html'; return false;"><img
+          <a href="#" onclick="frmsubmit();"><img
             src="http://www.iyaa.com/images/musicbank/button.png"></a>
           </center>
     </form>
 </div>
+  <script type="text/javascript" charset="utf-8">
+  
+    function frmsubmit(){
+    
+      var tiket1 = $("#inputTiket1").val()+0;
+      var tiket2 = $("#inputTiket2").val()+0;
+      var tiket3 = $("#inputTiket3").val()+0;
+      var tiket4 = $("#inputTiket4").val()+0;
+      var tiket5 = $("#inputTiket5").val()+0;
 
+      if( $("#inputNama").val() == "" ){
+        alert("Silakan masukkan nama.");
+        $("#inputNama").focus();
+        return false;
+      }
+
+      if( $("#inputEmail").val() == "" ){
+        alert("Silakan masukkan email.");
+        $("#inputEmail").focus();
+        return false;
+      }
+      if( $("#inputPhone").val() == "" ){
+        alert("Silakan masukkan nomor telepon.");
+        $("#inputPhone").focus();
+        return false;
+      }
+      if( (tiket1+tiket2+tiket3+tiket4+tiket5) > 0 ){
+          // console.log(tiket1+tiket2+tiket3+tiket4+tiket5);
+            $("form#formulir").submit();
+            // window.top.location.href='http://www.iyaa.com/hiburan/musik/musicbank/pre2.html';
+            // return false;
+            var delay = 50;
+            setTimeout(function(){ window.top.location = 'http://www.iyaa.com/hiburan/musik/musicbank/pre2.html'; }, delay);
+
+      }else {
+        alert("Silakan masukkan jumlah tiket."); 
+        return false;
+      }
+    }
+  </script>
   </body>
 </html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Music Bank</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" media="all"
+    href="${request.static_url('iyaayoutube:static/css/deny.css')}" title=""
+    type="stylesheet" />
+<script type="text/javascript" src="http://www.iyaa.com/js/jquery-1.6.4.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+#breaking_enter{display:none;}
+    div#clock { color: white;text-align: center; top:400px; width: 330px;}
+    div#clock p { background: #333; float: left; height: 88px; width: 88px; ;-webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      padding: 0;
+      margin: 0;
+      font-family: Arial;
+border-radius: 5px; }
+    div#clock p span { display: block; font-size: 50px; font-weight: bold; padding: 25px 0 15px}
+    div#clock div.space { color: #ccc; display: block; line-height: 1.7em; font-size: 50px; float: left; height: 88px; width: 30px; }
+
+    div.coupon{ color: #333 !important; font-size: 50px; font-weight: bold; }
+
+    div.multi_clock{ border: 1px solid #666; color: #333; float: left; margin: 10px; padding: 5px; }
+
+    pre{background-color: #eee; border: 1px solid #ccc; line-height: 1.4em; padding: 10px; margin: 0;}
+          .formulir{position:absolute;top:302px;left:520px; width:328px;}
+    .formulir .inp{width:295px; border:none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; padding:6px 15px; margin-bottom:10px;font-family:Verdana, Geneva, sans-serif;}
+    .formulir .sum{width:295px; float:left; border:1px solid #7f7174; padding:7px 15px 12px 15px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; font-family:Verdana, Geneva, sans-serif; color:#cccccc; margin-bottom:10px;}
+    .formulir ul{width:270px; float:left; padding:10px 0 0 25px;}
+    .formulir ul li p{padding-bottom:10px}
+    .formulir ul li p span{font-family:Arial, Helvetica, sans-serif;}
+    .formulir ul li{float:left; padding:0 5px;}
+    .formulir ul li select{padding:5px 10px;}
+
+    .formulir2{position:absolute;top:430px;left:556px; width:328px;}
+    .formulir2 .inp{width:295px; border:none;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; padding:6px 15px; margin-bottom:10px;font-family:Verdana, Geneva, sans-serif;}
+
+    .formulir3{position:absolute;top:310px;left:536px; width:360px; font-size:15px; color:#ccc; font-weight:bold; font-family:Verdana, Geneva, sans-serif;}
+    .formulir3 span{padding-left:10px;}
+    .formulir3 ul{float:left; padding:15px 0 10px 20px;}
+    .formulir3 li{float:left; width:130px; padding:10px 20px 10px; color:#d9b8d4;}
+
+    .formulir4{position:absolute;top:310px;left:536px; width:360px; font-size:13px; color:#d9b8d4; font-weight:bold; font-family:Verdana, Geneva, sans-serif;}
+    .formulir4 ul{padding:20px 0 0 20px;}
+    .formulir4 li{float:left; padding-bottom:7px;}
+    .formulir4 p{float:left; width:120px;}
+    .formulir4 .bar{width:198px; height:14px; float:left; background:#cccccc; border:1px solid #666666;}
+    .formulir4 .bar span{color:#fff; font-weight:normal;font-size:11px; text-align:right; padding-right:5px;}
+
+      /* .formulir p {margin: 0; padding: 0;} */
+      /* .formulir .inp{width:295px; border:none;-webkit-border-radius: */
+      /*   5px;-moz-border-radius: 5px;border-radius: 5px; padding:6px 15px; */
+      /*   margin-bottom:10px;font-family:Verdana, Geneva, sans-serif;} */
+      /* .formulir .sum{width:295px; float:left; border:1px solid #7f7174; */
+      /*   padding:7px 15px 12px 15px;-webkit-border-radius: */
+      /*   5px;-moz-border-radius: 5px;border-radius: 5px; font-family:Verdana, */
+      /*   Geneva, sans-serif; color:#cccccc; margin-bottom:10px;} */
+      /* .formulir ul{width:270px; float:left; padding:10px 0 0 25px; list-style: */
+      /* none; font-size: 13px;} */
+      /* .formulir ul li p{padding-bottom:10px} */
+      /* .formulir ul li p span{font-family:Arial, Helvetica, sans-serif;} */
+      /* .formulir ul li{float:left; padding:0 5px;} */
+      /* .formulir ul li select{padding:5px 10px;} */
+
+      /* .formulir2{position:absolute;top:430px;left:556px; width:328px;} */
+      /* .formulir2 .inp{width:295px; border:none;-webkit-border-radius: */
+      /*   5px;-moz-border-radius: 5px;border-radius: 5px; padding:6px 15px; */
+      /*   margin-bottom:10px;font-family:Verdana, Geneva, sans-serif;} */
+
+      /* .formulir3{position:absolute;top:310px;left:536px; width:360px; */
+      /*   font-size:15px; color:#ccc; font-weight:bold; font-family:Verdana, */
+      /*   Geneva, sans-serif;} */
+      /* .formulir3 span{padding-left:10px;} */
+      /* .formulir3 ul{float:left; padding:15px 0 10px 20px;} */
+      /* .formulir3 li{float:left; width:130px; padding:10px 20px 10px; */
+      /*   color:#d9b8d4;} */
+
+      /* .formulir4{position:absolute;top:310px;left:536px; width:360px; */
+      /*   font-size:13px; color:#d9b8d4; font-weight:bold; font-family:Verdana, */
+      /*   Geneva, sans-serif;} */
+      /* .formulir4 ul{padding:20px 0 0 20px;} */
+      /* .formulir4 li{float:left; padding-bottom:7px;} */
+      /* .formulir4 p{float:left; width:120px;} */
+      /* .formulir4 .bar{width:198px; height:14px; float:left; background:#cccccc; */
+      /*   border:1px solid #666666;} */
+      /* .formulir4 .bar span{color:#fff; font-weight:normal;font-size:11px; */
+      /*   text-align:right; padding-right:5px;} */
+    </style>
+<script type="text/javascript" >
+/*
+ * jQuery The Final Countdown plugin v1.0.0 beta
+ * http://github.com/hilios/jquery.countdown
+ *
+ * Copyright (c) 2011 Edson Hilios
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+(function($) {
+  
+  $.fn.countdown = function(toDate, callback) {
+    var handlers = ['seconds', 'minutes', 'hours', 'days', 'weeks', 'daysLeft'];
+    
+    function delegate(scope, method) {
+      return function() { return method.call(scope) }
+    }
+    
+    return this.each(function() {
+      // Convert
+      if(!(toDate instanceof Date)) {
+        if(String(toDate).match(/^[0-9]*$/)) {
+          toDate = new Date(toDate);
+        } else if( toDate.match(/([0-9]{1,2})\/([0-9]{1,2})\/([0-9]{2,4})\s([0-9]{1,2})\:([0-9]{2})\:([0-9]{2})/) ||
+            toDate.match(/([0-9]{2,4})\/([0-9]{1,2})\/([0-9]{1,2})\s([0-9]{1,2})\:([0-9]{2})\:([0-9]{2})/)
+            ) {
+          toDate = new Date(toDate);
+        } else if(toDate.match(/([0-9]{1,2})\/([0-9]{1,2})\/([0-9]{2,4})/) || 
+                  toDate.match(/([0-9]{2,4})\/([0-9]{1,2})\/([0-9]{1,2})/)
+                  ) {
+          toDate = new Date(toDate)
+        } else {
+          throw new Error("Doesn't seen to be a valid date object or string")
+        }
+      }
+      
+      var $this = $(this),
+          values = {},
+          lasting = {},
+          interval = $this.data('countdownInterval'),
+          currentDate = new Date(),
+          secondsLeft = Math.floor((toDate.valueOf() - currentDate.valueOf()) / 1000);
+      
+      function triggerEvents() {
+        // Evaluate if this node is included in the html
+        if($this.closest('html').length === 0) {
+          stop(); // Release the memory
+          dispatchEvent('removed');
+          return;
+        }
+        // Calculate the time offset
+        secondsLeft--;
+        if(secondsLeft < 0) {
+          secondsLeft = 0;
+        }
+        lasting = {
+          seconds : secondsLeft % 60,
+          minutes : Math.floor(secondsLeft / 60) % 60,
+          hours   : Math.floor(secondsLeft / 60 / 60) % 24,
+          days    : Math.floor(secondsLeft / 60 / 60 / 24),
+          weeks   : Math.floor(secondsLeft / 60 / 60 / 24 / 7),
+          daysLeft: Math.floor(secondsLeft / 60 / 60 / 24) % 7
+        }
+        for(var i=0; i<handlers.length; i++) {
+          var eventName = handlers[i];
+          if(values[eventName] != lasting[eventName]) {
+            values[eventName] = lasting[eventName];
+            dispatchEvent(eventName);
+          }
+        }
+        if(secondsLeft == 0) { 
+          stop();
+          dispatchEvent('finished');
+        }
+      }
+      triggerEvents();
+      
+      function dispatchEvent(eventName) {
+        var event     = $.Event(eventName);
+        event.date    = new Date(new Date().valueOf() + secondsLeft);
+        event.value   = values[eventName] || "0";
+        event.toDate  = toDate;
+        event.lasting = lasting;
+        switch(eventName) {
+          case "seconds":
+          case "minutes":
+          case "hours":
+            event.value = event.value < 10 ? '0'+event.value.toString() : event.value.toString();
+            break;
+          default:
+            if(event.value) {
+              event.value = event.value.toString();
+            }
+            break;
+        }
+        callback.call($this, event);
+      }
+      
+      function stop() {
+        clearInterval(interval);
+      }
+
+      function start() {
+        $this.data('countdownInterval', setInterval(delegate($this, triggerEvents), 1000));
+        interval = $this.data('countdownInterval');
+      }
+      
+      if(interval) stop();
+      start();
+    });
+  }
+})(jQuery);  
+  
+  </script>
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      var currentDate = new Date(),
+          finished = false,
+          availiableExamples = {
+            set15daysFromNow: 15 * 24 * 60 * 60 * 1000,
+            set5minFromNow  : 5 * 60 * 1000,
+            set1minFromNow  : 1 * 60 * 1000
+          };
+      
+      function callback(event) {
+        $this = $(this);
+        switch(event.type) {
+          case "seconds":
+          case "minutes":
+          case "hours":
+          case "days":
+          case "weeks":
+          case "daysLeft":
+            $this.find('span#'+event.type).html(event.value);
+            if(finished) {
+              $this.fadeTo(0, 1);
+              finished = false;
+            }
+            break;
+          case "finished":
+            $this.fadeTo('slow', .5);
+            finished = true;
+            break;
+        }
+      }
+      
+    var value = '2012/12/20 12:00:00';
+      $('div#clock').countdown(value, callback);
+      
+    });
+  </script>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon"
+    href="${request.static_url('iyaayoutube:static/ico/favicon.ico')}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-144-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-114-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-72-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-57-precomposed.png')}">
+  </head>
+
+  <body style="background: none;">
+    <div id="clock">
+      <p>
+      <span id="hours"></span>
+      Hours
+      </p>
+      <div class="space">:</div>
+      <p>
+      <span id="minutes"></span>
+      Minutes
+      </p>
+      <div class="space">:</div>
+      <p>
+      <span id="seconds"></span>
+      Seconds
+      </p>
+    </div> 
+  </body>
+</html>

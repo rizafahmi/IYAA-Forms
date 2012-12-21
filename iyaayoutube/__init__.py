@@ -11,15 +11,14 @@ def main(global_config, **settings):
     config.add_renderer('.html', mako_factory)
 
     config.add_route('home', '/')
-    config.add_route('coverdance', '/coverdance')
+    config.add_route('form', '/form')
+    config.add_route('countdown', '/countdown')
     config.add_route('save', '/save')
-    config.add_route('save_coverdance', '/save_coverdance')
     config.add_route('list', '/list')
-    config.add_route('view_video', '/view_video/{video_id}')
+    config.add_route('noaccess', '/noaccess')
+    config.add_route('pilih', '/pilih')
+    config.add_route('email_list', '/email_list')
     # Admin List
-    config.add_route('flashlist', '/flashlist')
-    config.add_route('coverlist', '/coverlist')
-    config.add_route('delete', '/delete/{id}')
 
     # MongoDB Setting
     import pymongo
