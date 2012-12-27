@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>List Early Bird Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="${request.static_url('iyaayoutube:static/css/bootstrap.css')}" rel="stylesheet">
+    <style type="text/css">
+      body {
+          background-color: transparent;
+          color: rgb(143, 127, 143);
+      }
+    </style>
+    <link
+    href="${request.static_url('iyaayoutube:static/css/bootstrap-responsive.css')}" rel="stylesheet">
+
+    <link href="${request.static_url('iyaayoutube:static/css/slider.css')}" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon"
+    href="${request.static_url('iyaayoutube:static/ico/favicon.ico')}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-144-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-114-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-72-precomposed.png')}">
+    <link rel="apple-touch-icon-precomposed"
+    href="${request.static_url('iyaayoutube:static/ico/apple-touch-icon-57-precomposed.png')}">
+  </head>
+  <body>
+    <div align="center">
+      <form action="/search" class="form-search" method="post" accept-charset="utf-8">
+        <input type="text" name="email" id="email" class="input-medium search-query" placeholder="Masukkan Email Anda" value="" />
+        <button id="submitButton" type="submit" class="btn">Search</button>
+      </form>
+      % if users_count > 0 and users:
+      <h3>Prebooking Tahap 1</h3>
+      <table border="0" class="table table-condensed">
+        <tr style="
+              background-color: black;
+                  color: white;
+                  ">
+          <th>No.</th>
+          <th>Date</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Diamond</th>
+          <th>Gold</th>
+          <th>Silver</th>
+          <th>Bronze</th>
+          <th>Festival</th>
+        </tr>
+          <% i = 1 %>
+          % for no, user in enumerate(users): 
+          <tr>
+            <td>${no+1}</td>
+            <% tgl = user.get('tgl', None)%>
+            % if tgl:
+            <td>${user['tgl']}</td>
+            % else:
+            <td>-</td>
+            % endif
+            <td>${user['nama']}</td>
+            <td>${user['email']}</td>
+            <td>${user['tiket1']}</td>
+            <td>${user['tiket2']}</td>
+            <td>${user['tiket3']}</td>
+            <td>${user['tiket4']}</td>
+            <% tiket5 = user.get('tiket5', None)
+            %>
+            % if tiket5:
+            <td>${user['tiket5']}</td>
+            % else:
+            <% new_tiket5 = user.get('tiket5\r', 0) %>
+            <td>${new_tiket5}</td>
+            % endif
+          </tr>
+          <% i = i + 1 %>
+          %endfor
+        % endif
+      </table>
+      <br />
+      % if users2_count > 0 and users2:
+      <h3>Prebooking Tahap 2</h3>
+      <table border="0" class="table">
+        <tr style="
+              background-color: black;
+                  color: white;
+                  ">
+          <th>No.</th>
+          <th>Date</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Diamond</th>
+          <th>Gold</th>
+          <th>Silver</th>
+          <th>Bronze</th>
+          <th>Festival</th>
+        </tr>
+          % for no, user in enumerate(users2): 
+          <tr>
+            <td>${no+1}</td>
+            <% tgl = user.get('tgl', None)%>
+            % if tgl:
+            <td>${user['tgl']}</td>
+            % else:
+            <td>-</td>
+            % endif
+            <td>${user['nama']}</td>
+            <td>${user['email']}</td>
+            <td>${user['tiket1']}</td>
+            <td>${user['tiket2']}</td>
+            <td>${user['tiket3']}</td>
+            <td>${user['tiket4']}</td>
+            <% tiket5 = user.get('tiket5', None)
+            %>
+            % if tiket5:
+            <td>${user['tiket5']}</td>
+            % else:
+            <% new_tiket5 = user.get('tiket5\r', 0) %>
+            <td>${new_tiket5}</td>
+            % endif
+          </tr>
+          %endfor
+        % endif
+      </table>
+      % if users2_count < 1 and users_count < 1:
+      <h3>Informasi Anda tidak tersedia.</h3>
+      % endif
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="${request.static_url('iyaayoutube:static/js/jquery.js')}"></script>
+    <script src="${request.static_url('iyaayoutube:static/js/bootstrap-transition.js')}"></script>
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-alert.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-modal.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-dropdown.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-scrollspy.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-tab.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-tooltip.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-popover.js')}"></script> -->
+    <script src="${request.static_url('iyaayoutube:static/js/bootstrap-button.js')}"></script>
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-collapse.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-carousel.js')}"></script> -->
+    <!-- <script src="${request.static_url('iyaayoutube:static/js/bootstrap-typeahead.js')}"></script> -->
+    <script type="text/javascript" charset="utf-8">
+      $("#submitButton").click(function(){
+          
+      if($("#email").val()==''){
+        alert("Silakan masukkan email anda.");
+        return false;
+      }
+          });
+    </script>
+
+  </body>
+</html>

@@ -72,7 +72,7 @@
 
   <body style="background: none;">
 <div class="formulir">
-    <form id="formulir" name="formulir" action="" method="POST" accept-charset="utf-8">
+    <form id="formulir" name="formulir" action="/phase2" method="POST" accept-charset="utf-8">
         <input class="inp" id="inputNama" name="inputNama" type="text" placeholder="Nama :"/>
         <input class="inp" id="inputEmail" name="inputEmail" type="text" placeholder="Email :"/>
         <input class="inp" id="inputPhone" name="inputPhone" type="text" placeholder="Telephone :"/>
@@ -167,15 +167,28 @@
           </center>
     </form>
 </div>
+<script type="text/javascript" src="http://www.iyaa.com/js/jquery.placeholder.js"></script>
+<script type="text/javascript">
+   // To test the @id toggling on password inputs in browsers that don’t support changing an input’s @type dynamically (e.g. Firefox 3.6 or IE), uncomment this:
+   // $.fn.hide = function() { return this; }
+   // Then uncomment the last rule in the <style> element (in the <head>).
+   $(function() {
+    // Invoke the plugin
+    $('input, textarea').placeholder();
+    // That’s it, really.
+    // Now display a message if the browser supports placeholder natively
+   });
+  </script>
   <script type="text/javascript" charset="utf-8">
-  
+
     function frmsubmit(){
     
-      var tiket1 = $("#inputTiket1").val()+0;
-      var tiket2 = $("#inputTiket2").val()+0;
-      var tiket3 = $("#inputTiket3").val()+0;
-      var tiket4 = $("#inputTiket4").val()+0;
-      var tiket5 = $("#inputTiket5").val()+0;
+      var tiket1 = parseInt($("#inputTiket1").val());
+      var tiket2 = parseInt($("#inputTiket2").val());
+      var tiket3 = parseInt($("#inputTiket3").val());
+      var tiket4 = parseInt($("#inputTiket4").val());
+      var tiket5 = parseInt($("#inputTiket5").val());
+
 
       if( $("#inputNama").val() == "" ){
         alert("Silakan masukkan nama.");
@@ -188,18 +201,58 @@
         $("#inputEmail").focus();
         return false;
       }
+      if($("#inputEmail").val().search(/ /i)>-1){
+        alert("Format email anda salah. Email tidak boleh ada spasi.");
+        $("#inputEmail").focus();
+        return false;
+      }
       if( $("#inputPhone").val() == "" ){
         alert("Silakan masukkan nomor telepon.");
         $("#inputPhone").focus();
         return false;
+      } 
+      var intRegex = /^\d+$/;
+
+      var str = $('#inputPhone').val();
+      if(!intRegex.test(str)) {
+        alert("Anda salah memasukkan nomor telpon. Silakan masukkan angka.");
+        return false;
       }
+      if(Number($("#inputPhone").val())){
+      }
+      console.log($("#inputPhone").val());
       if( (tiket1+tiket2+tiket3+tiket4+tiket5) > 0 ){
           // console.log(tiket1+tiket2+tiket3+tiket4+tiket5);
-            $("form#formulir").submit();
+          var dataString = "inputNama=" + $("#inputNama").val() + "&inputEmail=" + $("#inputEmail").val() + "&inputPhone=" + $("#inputPhone").val() + "&inputTiket1=" + $("#inputTiket1").val() + "&inputTiket2=" + tiket2 + "&inputTiket3=" + $("#inputTiket3").val() + "&inputTiket4=" + $("#inputTiket4").val() + "&inputTiket5=" + $("#inputTiket5").val(); 
+          // $.ajaxSetup({ contentType: "application/json;charset=utf-8" });
+          $.ajaxSetup({
+            contentType: "application/x-www-form-urlencoded;charset=utf-8",
+            type: "POST"
+          });
+
+          $.ajax({  
+            type: "POST",  
+            url: "/phase2",  
+            data: dataString,  
+            success: function() {  
+              // console.log("Form submit success!");
+              // window.top.location.href='http://www.iyaa.com/hiburan/musik/musicbank/pre2.html';
+              window.parent.location.href = 'http://www.iyaa.com/hiburan/musik/musicbank/pre2.html';
+
+
+              }
+              ,
+              error: function (xhr, ajaxOptions, thrownError) {
+                alert("System busy. Please submit the form one more time.");
+              }
+          });  
+        return false;  
+
+          // $("form#formulir").submit();
             // window.top.location.href='http://www.iyaa.com/hiburan/musik/musicbank/pre2.html';
             // return false;
-            var delay = 50;
-            setTimeout(function(){ window.top.location = 'http://www.iyaa.com/hiburan/musik/musicbank/pre2.html'; }, delay);
+            // var delay = 100;
+            // setTimeout(function(){ window.top.location = 'http://www.iyaa.com/hiburan/musik/musicbank/pre2.html'; }, delay);
 
       }else {
         alert("Silakan masukkan jumlah tiket."); 

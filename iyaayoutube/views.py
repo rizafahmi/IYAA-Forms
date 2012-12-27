@@ -12,8 +12,12 @@ threads = []
 
 @view_config(route_name='home', renderer='index.html')
 def save_view(request):
+    import datetime
+
+    if datetime.datetime(2012, 12, 26, 16, 0, 0) > datetime.datetime.now():
+        return HTTPFound(location="http://www.iyaa.com:6540/countdown")
+
     if request.POST:
-        import datetime
         new_data = {
             'nama': request.POST['inputNama'],
             'email': request.POST['inputEmail'],
@@ -28,8 +32,40 @@ def save_view(request):
 
         if new_data:
             request.db['musicbank_early'].save(new_data)
-            print "SAVE DATA"
-            print new_data
+            # print "SAVE DATA"
+            # print new_data
+            # send_email(new_data)
+            t = threading.Thread(target=send_email, args=(new_data['nama'], new_data['email'],
+                new_data['phone'], new_data['tiket1'], new_data['tiket2'], new_data['tiket3'], new_data['tiket4'],
+                new_data['tiket5']))
+
+            threads.append(t)
+            t.start()
+            # return HTTPFound(location='http://www.iyaa.com/hiburan/musik/musicbank/pre2.html')
+    return {}
+
+
+@view_config(route_name='home2', renderer='index.html')
+def save1_view(request):
+    import datetime
+
+    if request.POST:
+        new_data = {
+            'nama': request.POST['inputNama'],
+            'email': request.POST['inputEmail'],
+            'phone': request.POST['inputPhone'],
+            'tiket1': request.POST['inputTiket1'],
+            'tiket2': request.POST['inputTiket2'],
+            'tiket3': request.POST['inputTiket3'],
+            'tiket4': request.POST['inputTiket4'],
+            'tiket5': request.POST['inputTiket5'],
+            'tgl': datetime.datetime.now(),
+        }
+
+        if new_data:
+            request.db['musicbank_early2'].save(new_data)
+            # print "SAVE DATA"
+            # print new_data
             # send_email(new_data)
             t = threading.Thread(target=send_email, args=(new_data['nama'], new_data['email'],
                 new_data['phone'], new_data['tiket1'], new_data['tiket2'], new_data['tiket3'], new_data['tiket4'],
@@ -53,6 +89,7 @@ def send_email(*data):
 
     msg['From'] = gmail_user
     msg['To'] = data[1]
+    msg['cc'] = 'bayu.tjahjono@iyaa.com'
     msg['Subject'] = "MUSIC BANK - Konfirmasi Tiket Prebooking"
 
     # html = "<h1>Thanks for pre-booking, " + data[0] + "</h1>"
@@ -169,13 +206,13 @@ text-decoration:none;
                 'status': 'sent',
                 'tgl': str(datetime.datetime.now()),
                 }
-        mongo['musicbank_early_email'].save(data_email)
+        mongo['musicbank_early_email2'].save(data_email)
     except Exception, e:
         data_email = {'email': str(data[1]),
                 'status': str(e),
                 'tgl': str(datetime.datetime.now()),
                 }
-        mongo['musicbank_early_email'].save(data_email)
+        mongo['musicbank_early_email2'].save(data_email)
         print "Enable to send email. Error: %s" % str(e)
 
 
@@ -194,7 +231,6 @@ def form_view(request):
         }
 
         if request.POST['inputNama']:
-            request.db['musicbank_early'].save(new_data)
             import smtplib
 
             from email.mime.multipart import MIMEMultipart
@@ -316,12 +352,16 @@ text-decoration:none;
 
 @view_config(route_name='countdown', renderer='countdown.html')
 def countdown_view(request):
+    import datetime
+
+    if datetime.datetime(2012, 12, 26, 16, 0, 0) < datetime.datetime.now():
+        return HTTPFound(location="http://www.iyaa.com:6540/phase2")
     return {}
 
 
 @view_config(route_name='list', renderer='list.html')
 def list_view(request):
-    allow = ['202.77.101.34', '192.168.103.2', '202.77.102.30']
+    allow = ['202.77.101.34', '192.168.103.4', '202.77.102.30', '103.20.106.194', '202.149.78.2']
     if request.remote_addr in allow:
         # data = request.db['musicbank_early'].find({'tiket5': {'$exists': False}}).sort('phone', -1)
         # data = request.db['musicbank_early'].find({'tiket5': {'$exists': True}})
@@ -358,10 +398,127 @@ def list_view(request):
         return HTTPFound(location='noaccess')
 
 
+@view_config(route_name='list2', renderer='list.html')
+def list2_view(request):
+    allow = ['202.77.101.34', '192.168.103.4', '202.77.102.30', '103.20.106.194', '202.149.78.2']
+    if request.remote_addr in allow:
+        # data = request.db['musicbank_early'].find({'tiket5': {'$exists': False}}).sort('phone', -1)
+        # data = request.db['musicbank_early'].find({'tiket5': {'$exists': True}})
+        # data2 = request.db['musicbank_early'].find({'tiket5': {'$exists': True}})
+        data = request.db['musicbank_early2'].find()
+        data2 = request.db['musicbank_early2'].find()
+
+        total_1 = 0
+        total_2 = 0
+        total_3 = 0
+        total_4 = 0
+        total_5 = 0
+        for d in data2:
+            if d['tiket1']:
+                total_1 = total_1 + int(d['tiket1'])
+            if d['tiket1']:
+                total_2 = total_2 + int(d['tiket2'])
+            if d['tiket1']:
+                total_3 = total_3 + int(d['tiket3'])
+            if d['tiket1']:
+                total_4 = total_4 + int(d['tiket4'])
+            if d.get('tiket5', None):
+                total_5 = total_5 + int(d['tiket5'])
+
+        return {'users': data,
+                'total_1': total_1,
+                'total_2': total_2,
+                'total_3': total_3,
+                'total_4': total_4,
+                'total_5': total_5,
+
+                }
+    else:
+        return HTTPFound(location='noaccess')
+
+
+@view_config(route_name='list_null', renderer='list.html')
+def list_null_view(request):
+    allow = ['202.77.101.34', '192.168.103.4', '202.77.102.30', '103.20.106.194', '202.149.78.2']
+    if request.remote_addr in allow:
+        data = request.db['musicbank_early2'].find({'tiket5': {'$exists': False}}).sort('phone', -1)
+        data2 = request.db['musicbank_early2'].find({'tiket5': {'$exists': False}}).sort('phone', -1)
+
+        total_1 = 0
+        total_2 = 0
+        total_3 = 0
+        total_4 = 0
+        total_5 = 0
+        for d in data2:
+            if d['tiket1']:
+                total_1 = total_1 + int(d['tiket1'])
+            if d['tiket1']:
+                total_2 = total_2 + int(d['tiket2'])
+            if d['tiket1']:
+                total_3 = total_3 + int(d['tiket3'])
+            if d['tiket1']:
+                total_4 = total_4 + int(d['tiket4'])
+            if d.get('tiket5', None):
+                total_5 = total_5 + int(d['tiket5'])
+
+        return {'users': data,
+                'total_1': total_1,
+                'total_2': total_2,
+                'total_3': total_3,
+                'total_4': total_4,
+                'total_5': total_5,
+
+                }
+    else:
+        return HTTPFound(location='noaccess')
+
+
 @view_config(route_name='pilih', renderer='pilih.html')
 def pilih_view(request):
 
+    if request.POST:
+        new_data = {
+            'nama': request.POST['nama'],
+            'email': request.POST['email'],
+        }
+
+        if request.POST.get('pilihan1', None):
+            new_data['pilihan1'] = 1
+            new_data['pilihan2'] = 0
+            new_data['pilihan3'] = 0
+            new_data['pilihan4'] = 0
+        if request.POST.get('pilihan2', None):
+            new_data['pilihan1'] = 0
+            new_data['pilihan2'] = 1
+            new_data['pilihan3'] = 0
+            new_data['pilihanr'] = 0
+        if request.POST.get('pilihan3', None):
+            new_data['pilihan1'] = 0
+            new_data['pilihan2'] = 0
+            new_data['pilihan3'] = 1
+            new_data['pilihan4'] = 0
+        if request.POST.get('pilihan4', None):
+            new_data['pilihan1'] = 0
+            new_data['pilihan2'] = 0
+            new_data['pilihan3'] = 0
+            new_data['pilihan4'] = 1
+
+        request.db['musicbank_polling'].save(new_data)
+
     return {}
+
+
+@view_config(route_name='result', renderer='result.html')
+def result_view(request):
+    data1 = request.db['musicbank_polling'].find({'pilihan1': 1}).count()
+    data2 = request.db['musicbank_polling'].find({'pilihan2': 1}).count()
+    data3 = request.db['musicbank_polling'].find({'pilihan3': 1}).count()
+    data4 = request.db['musicbank_polling'].find({'pilihan4': 1}).count()
+
+    return {'data1': data1,
+            'data2': data2,
+            'data3': data3,
+            'data4': data4, }
 
 
 @view_config(route_name='noaccess', renderer='noaccess.html')
@@ -372,13 +529,113 @@ def noaccess_view(request):
 
 @view_config(route_name='email_list', renderer='email_list.html')
 def email_view(request):
-    allow = ['202.77.101.34', '192.168.103.2', '202.77.102.30']
+    allow = ['202.77.101.34', '192.168.103.4', '202.77.102.30', '103.20.106.194', '202.149.78.2']
     if request.remote_addr in allow:
         import pymongo
         conn = pymongo.Connection(host="mongo.iyaa.com", port=5858)
         mongo = conn.iyaa
-        data = mongo['musicbank_early_email'].find()
+        data = mongo['musicbank_early_email2'].find()
 
         return {'data': data}
+    else:
+        return HTTPFound(location='noaccess')
+
+
+@view_config(route_name='duplicate_list', renderer='duplicate_list.html')
+def duplicate_list(request):
+    allow = ['202.77.101.34', '192.168.103.4', '202.77.102.30', '103.20.106.194', '202.149.78.2']
+    if request.remote_addr in allow:
+        list_email = []
+        for data in request.db['musicbank_early'].find():
+            current_email = data['email']
+
+            counter = request.db['musicbank_early'].find({'email': current_email}).count()
+            if counter > 1:
+                if current_email not in list_email:
+                    list_email.append(current_email)
+
+        data = []
+        for user in list_email:
+            detail = request.db['musicbank_early'].find_one({'email': user})
+            detail['count'] = request.db['musicbank_early'].find({'email': user}).count()
+            data.append(detail)
+
+        return {'data': data}
+    else:
+        return HTTPFound(location='noaccess')
+
+
+@view_config(route_name='duplicate_list2', renderer='duplicate_list.html')
+def duplicate_list2(request):
+    allow = ['202.77.101.34', '192.168.103.4', '202.77.102.30', '103.20.106.194', '202.149.78.2']
+    if request.remote_addr in allow:
+        list_email = []
+        for data in request.db['musicbank_early2'].find():
+            current_email = data['email']
+
+            counter = request.db['musicbank_early2'].find({'email': current_email}).count()
+            if counter > 1:
+                if current_email not in list_email:
+                    list_email.append(current_email)
+
+        data = []
+        for user in list_email:
+            detail = request.db['musicbank_early2'].find_one({'email': user})
+            detail['count'] = request.db['musicbank_early2'].find({'email': user}).count()
+            data.append(detail)
+
+        return {'data': data}
+    else:
+        return HTTPFound(location='noaccess')
+
+
+@view_config(route_name='search', renderer='search.html')
+def search_view(request):
+    if request.POST:
+        data = request.db['musicbank_early'].find({'email': request.POST['email']})
+        data2 = request.db['musicbank_early2'].find({'email': request.POST['email']})
+        print data.count()
+        return {'users': data, 'users2': data2, 'users_count': data.count(), 'users2_count': data2.count()}
+    return {}
+
+
+@view_config(route_name='cleanlist2', renderer='cleanlist.html')
+def cleanlist2_view(request):
+    allow = ['202.77.101.34', '192.168.103.4', '202.77.102.30', '103.20.106.194', '202.149.78.2']
+    if request.remote_addr in allow:
+        # data = request.db['musicbank_early'].find({'tiket5': {'$exists': False}}).sort('phone', -1)
+        # data = request.db['musicbank_early'].find({'tiket5': {'$exists': True}})
+        # data2 = request.db['musicbank_early'].find({'tiket5': {'$exists': True}})
+        data = request.db['musicbank_early2'].find()
+        data2 = request.db['musicbank_early2'].find()
+
+        total_1 = 0
+        total_2 = 0
+        total_3 = 0
+        total_4 = 0
+        total_5 = 0
+        for d in data2:
+            if d['tiket1']:
+                total_1 = total_1 + int(d['tiket1'])
+            if d['tiket1']:
+                total_2 = total_2 + int(d['tiket2'])
+            if d['tiket1']:
+                total_3 = total_3 + int(d['tiket3'])
+            if d['tiket1']:
+                total_4 = total_4 + int(d['tiket4'])
+            if d.get('tiket5', None):
+                total_5 = total_5 + int(d['tiket5'])
+
+        clean_email = request.db['musicbank_early2'].find().distinct('email')
+
+        return {'users': data,
+                'total_1': total_1,
+                'total_2': total_2,
+                'total_3': total_3,
+                'total_4': total_4,
+                'total_5': total_5,
+                'clean_email': clean_email,
+
+                }
     else:
         return HTTPFound(location='noaccess')

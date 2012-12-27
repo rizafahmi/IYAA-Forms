@@ -54,11 +54,49 @@
 
   <body style="background: none;">
 <div class="formulir2">
-                <form>
-                  <input class="inp" type="text" placeholder="Nama :"/>
-                  <input class="inp" type="text" placeholder="Email/HP :"/>                 
-                  <input type="image" src="http://www.iyaa.com/images/musicbank/button3.png"  style="float:right; padding-top:10px;" />
+  <form action="/pilih" method="get" accept-charset="utf-8">
+                  <input class="inp" id="nama" name="nama" type="text" placeholder="Nama :"/>
+                  <input class="inp" type="text" id="email" name="email" placeholder="Email/HP :"/>                 
+                  <input type="radio" name="pilihan" id="pilihan1" value="pilihan1" /> Pilihan 1
+                  <input type="radio" name="pilihan" id="pilihan2" value="pilihan2" /> Pilihan 2
+                  <input type="radio" name="pilihan" id="pilihan3" value="pilihan3" /> Pilihan 3
+                  <input type="radio" name="pilihan" id="pilihan4" value="pilihan4" /> Pilihan 4
+                  <a href="#" onclick="frmsubmit();"><img src="http://www.iyaa.com/images/musicbank/button3.png"  style="float:right; padding-top:10px;" /></a>
                 </form>
               </div>
   </body>
+  <script type="text/javascript" src="http://www.iyaa.com/js/jquery-1.6.4.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    function frmsubmit() {
+       var dataString = "nama=" + $("#nama").val();
+       dataString += "&email=" + $("#email").val();
+       if($("#pilihan1:checked").val())
+        dataString += "&pilihan1=" + $("#pilihan1").val();
+       if($("#pilihan2:checked").val())
+        dataString += "&pilihan2=" + $("#pilihan2").val();
+       if($("#pilihan3:checked").val())
+        dataString += "&pilihan3=" + $("#pilihan3").val();
+       if($("#pilihan4:checked").val())
+        dataString += "&pilihan4=" + $("#pilihan4").val();
+
+          $.ajaxSetup({
+            contentType: "application/x-www-form-urlencoded;charset=utf-8",
+            type: "POST"
+          });
+
+          $.ajax({  
+            type: "POST",  
+            url: "/pilih",  
+            data: dataString,  
+            success: function() {  
+              window.parent.location.href = 'http://www.iyaa.com:6541/result';
+
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                alert("System busy. Please submit the form one more time.");
+              }
+          });  
+        return false;  
+    }
+  </script>
 </html>

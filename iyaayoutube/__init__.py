@@ -11,13 +11,22 @@ def main(global_config, **settings):
     config.add_renderer('.html', mako_factory)
 
     config.add_route('home', '/')
+    config.add_route('home2', '/phase2')
+    config.add_route('home1', '/phase1')
     config.add_route('form', '/form')
     config.add_route('countdown', '/countdown')
     config.add_route('save', '/save')
     config.add_route('list', '/list')
+    config.add_route('list2', '/list2')
+    config.add_route('cleanlist2', '/cleanlist2')
+    config.add_route('list_null', '/list_null')
     config.add_route('noaccess', '/noaccess')
     config.add_route('pilih', '/pilih')
+    config.add_route('result', '/result')
     config.add_route('email_list', '/email_list')
+    config.add_route('duplicate_list', '/duplicate_list')
+    config.add_route('duplicate_list2', '/duplicate_list2')
+    config.add_route('search', '/search')
     # Admin List
 
     # MongoDB Setting

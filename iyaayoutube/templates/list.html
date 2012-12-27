@@ -87,7 +87,8 @@
           % if tiket5:
           <td>${user['tiket5']}</td>
           % else:
-          <td>0</td>
+          <% new_tiket5 = user.get('tiket5\r', 0) %>
+          <td>${new_tiket5}</td>
           % endif
         </tr>
         %endfor
